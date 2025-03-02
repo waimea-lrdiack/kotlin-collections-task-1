@@ -19,7 +19,7 @@ fun main() {
     println()
 
     // Create a list to store monkey names
-    val monkeys = null  // FIXME!
+    val monkeys = mutableListOf<String>()
 
     // Add in some test monkeys
     monkeys.add("Dave")
@@ -110,7 +110,10 @@ fun showMonkeys(monkeyList: List<String>) {
     println("-------------------")
 
     // Loop through the given list and show each monkey
-    check(false)   // FIXME: Remove this line and add your code
+    for (monkey in monkeyList) {
+        println(monkey)
+    }
+
 }
 
 
@@ -135,9 +138,9 @@ fun getNewMonkey(monkeyList: MutableList<String>) {
  * If there are no monkeys, it should return:
  *   There are no monkeys!
  */
-fun monkeyCounter(monkeyList: List<String>): String {
+fun monkeyCounter(monkeyList: List<String>): Int {
     // return the number of monkeys in the list
-    return "MONKEY COUNT MESSAGE"   // FIXME!
+    return monkeyList.size
 }
 
 
@@ -167,6 +170,7 @@ fun deleteFirstMonkey(monkeyList: MutableList<String>) {
  * if the list is not empty
  */
 fun deleteLastMonkey(monkeyList: MutableList<String>) {
+
     // Remove the last one from the list
 
     // Show some feedback
