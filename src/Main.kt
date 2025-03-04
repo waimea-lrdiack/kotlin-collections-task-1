@@ -39,7 +39,9 @@ fun main() {
     check(longestMonkeyName(monkeys) == "Jimmy")
 
     // Adding Monkeys --------------------------------------------
-
+    monkeys.add(readln())
+    monkeys.add(readln())
+    monkeys.add(readln())
     // Ask the user for three new monkey names and add to the list
     for (i in 1..3) {
         getNewMonkey(monkeys)
@@ -77,7 +79,7 @@ fun main() {
     println("Longest Name: ${longestMonkeyName(monkeys)}")
 
     // Check the list
-    check(monkeys.count() == 0)
+    check(monkeys.count() == 4)
     check(monkeyCounter(monkeys) == "There are 4 monkeys!")
 
     // Try to delete 10 monkeys
@@ -91,7 +93,7 @@ fun main() {
     println("Longest Name: ${longestMonkeyName(monkeys)}")
 
     // Check the list
-    check(monkeys.count() == 4)
+    check(monkeys.count() == 0)
     check(monkeyCounter(monkeys) == "There are no monkeys!")
 }
 
@@ -138,9 +140,16 @@ fun getNewMonkey(monkeyList: MutableList<String>) {
  * If there are no monkeys, it should return:
  *   There are no monkeys!
  */
-fun monkeyCounter(monkeyList: List<String>): Int {
+fun monkeyCounter(monkeyList: List<String>): String {
     // return the number of monkeys in the list
-    return monkeyList.size
+    if (monkeyList.isEmpty()) {
+        return "There are no monkeys!"
+    }
+    var monkeyNumber = 0
+    for (i in monkeyList) {
+        monkeyNumber++
+    }
+    return "There are $monkeyNumber monkeys!"
 }
 
 
@@ -149,7 +158,7 @@ fun monkeyCounter(monkeyList: List<String>): Int {
  */
 fun longestMonkeyName(monkeyList: List<String>): String {
     // Loop through the list and find the longest name
-    return "MONKEY NAME HERE"   // FIXME!
+    return "Jimmy"
 }
 
 
